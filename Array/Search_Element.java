@@ -1,41 +1,41 @@
-package Array;
+package Today_25Nov;
 
 import java.util.Scanner;
-
-// Java program to check whether an entered element is present or not in a given array
+//Java Program to Search Key Elements in an Array
 public class Search_Element {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter the number of elements in the array: ");
-        int n = sc.nextInt();  // Read the size of the array
-
-        int[] arr = new int[n];
-        System.out.println("Enter the elements of the array: ");
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();  // Read each element
+    public static void main(String[] args)
+    {
+        int n, x, flag = 0, i = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for(i = 0; i < n; i++)
+        {
+            a[i] = s.nextInt();
         }
-
-        System.out.print("Enter the element to search: ");
-        int target = sc.nextInt();  // Read the element to search
-
-        boolean isPresent = false;
-        int position = -1;  // To store the position of the target element
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i] == target) {
-                isPresent = true;
-                position = i + 1;  // Storing position (1-based index)
+        System.out.print("Enter the element you want to find:");
+        x = s.nextInt();
+        for(i = 0; i < n; i++)
+        {
+            if(a[i] == x)
+            {
+                flag = 1;
                 break;
             }
+            else
+            {
+                flag = 0;
+            }
         }
-
-        if (isPresent) {
-            System.out.println("The element " + target + " is present at position " + position + ".");
-        } else {
-            System.out.println("The element " + target + " is not present in the array.");
+        if(flag == 1)
+        {
+            System.out.println("Element found at position:"+(i + 1));
         }
-
-        sc.close();  // Close the scanner
+        else
+        {
+            System.out.println("Element not found");
+        }
     }
 }
